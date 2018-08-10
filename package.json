@@ -20,7 +20,6 @@
     "morgan": "~1.9.0",
     "prismic-dom": "~2.0.4",
     "prismic-javascript": "~1.4.0",
-    "pug": "~2.0.0-rc.2",
     "request": "~2.83.0",
     "serve-favicon": "~2.4.3"
   },
@@ -29,11 +28,21 @@
     "url": "http://github.com/prismicio/nodejs-sdk.git"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-eslint": "~8.0.1",
     "eslint": "~4.8.0",
     "eslint-config-airbnb-base": "~12.0.1",
     "eslint-plugin-import": "~2.7.0",
-    "nodemon": "^1.17.3"
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-noop": "^1.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-watch": "^5.0.1",
+    "nodemon": "^1.17.3",
+    "run-sequence": "^2.2.1"
   },
   "engines": {
     "node": ">=4.8.1",
