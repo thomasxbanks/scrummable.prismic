@@ -1,0 +1,108 @@
+.tabbed-section_container {
+  background: $clr_white;
+  overflow: hidden;
+  transition: opacity $ease-main $speed-slow;
+  &[data-state="not-active"] {
+    opacity: 0;
+  }
+  &[data-state="is-active"] {
+    opacity: 1;
+  }
+}
+
+.tabbed-section_tab {
+  width: 100%;
+  background: $clr_white;
+  @extend %padding-vertical-standard;
+  @extend %padding-horizontal-narrow;
+  .title {
+    @extend %christopher;
+    color: $clr_black;
+    margin-bottom: 1em;
+  }
+  .content {
+    @extend %richie;
+    color: $clr_boulder;
+  }
+  .volatility-meter_container {
+    margin-bottom: 1rem;
+  }
+  .grid-table {
+    @extend %richie;
+    th,
+    td {
+      line-height: 2.5em;
+    }
+    th {
+      color: $clr_boulder;
+      font-weight: normal;
+    }
+    td {
+      color: $clr_black;
+      font-weight: bold;
+    }
+  }
+  .data-table {
+    @extend %richie;
+    th,
+    td {
+      color: $clr_boulder;
+      line-height: 2.5em;
+    }
+    th {
+      font-weight: normal;
+    }
+  }
+}
+
+.tabbed-section_nav {
+  display: block;
+  ul {
+    background: $clr_white;
+    @extend %semantic-list;
+    @extend %horizontal-list;
+    width: 100%;
+    text-align: center;
+    li {
+      a {
+        position: relative;
+        @extend %junior;
+        letter-spacing: 0;
+        background: $clr_white;
+        color: $clr_black;
+        text-decoration: none;
+        display: block;
+        padding: 1rem 2rem (1rem - $border-width-std) 2rem;
+        &[data-state="is-active"] {
+          color: $clr_brand-primary;
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1rem;
+            height: 0.125rem;
+            border-bottom: $border-width-std solid $clr_brand-primary;
+          }
+        }
+        &[data-disabled="true"] {
+          opacity: $opacity-disabled-decimal;
+          &:hover {
+            background: none !important;
+            cursor: not-allowed !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tabbed-section_tab {
+  position: absolute;
+  top: 0;
+  left: -50000px;
+  &[data-state="is-active"] {
+    position: static;
+  }
+}

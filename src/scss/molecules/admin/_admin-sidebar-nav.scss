@@ -1,0 +1,28 @@
+.admin-sidebar-nav {
+  ul {
+    @extend %semantic-list;
+    @extend %border_radius-std;
+    overflow: hidden;
+    border: 1px solid $clr_silver;
+    li {
+      &:not(:last-of-type) {
+        border-bottom: 1px solid $clr_silver;
+      }
+      a {
+        display: block;
+        padding: 1rem;
+        @extend %bobby;
+        color: $clr_black;
+        text-decoration: none;
+        background: $clr_white;
+        &:hover,
+        &:focus {
+          background: rgba($clr_brand-primary, $tint-decimal);
+        }
+        &[data-state="is-active"] {
+          color: $clr_brand-primary;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+%button {
+  @extend button;
+}
+
+button::-moz-focus-outer {
+  border: 0; // Removes the dotted line on Firefox
+}
+
+a[class*="button-"] {
+  text-decoration: none; // Removes the default underline to make the text match actual buttons
+}
+
+.button-icon-only {
+  font-size: 0;
+}

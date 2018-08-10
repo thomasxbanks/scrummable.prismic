@@ -1,0 +1,54 @@
+%central-column {
+  max-width: $max-width;
+  margin-right: auto;
+  margin-left: auto;
+  @media screen and (max-width: $max-width) {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+%dead-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%padding-top {
+  padding-top: 3rem;
+}
+
+%padding-right {
+  padding-right: 1rem;
+  @media screen and (min-width: 768px) {
+    padding-right: 3rem;
+  }
+}
+
+%padding-bottom {
+  padding-bottom: 6rem;
+}
+
+%padding-left {
+  padding-left: 1rem;
+  @media screen and (min-width: 768px) {
+    padding-left: 3rem;
+  }
+}
+
+%padding-horizontal {
+  @extend %padding-right;
+  @extend %padding-left;
+}
+
+%padding-vertical {
+  @extend %padding-top;
+  @extend %padding-bottom;
+}
+
+%padding {
+  @extend %padding-top;
+  @extend %padding-right;
+  @extend %padding-bottom;
+  @extend %padding-left;
+}

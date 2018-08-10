@@ -9,6 +9,7 @@ const noop = require('gulp-noop');
 
 // For Css
 const sass = require('gulp-sass');
+const postcss = require('gulp-postcss');
 
 // For Js
 const babel = require('gulp-babel');
@@ -51,7 +52,7 @@ gulp.task('stream', () =>
 
 gulp.task('callback', () =>
   // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
-  watch(path.css.i, () => {
+  watch(src, () => {
     gulp.src([path.css.i, path.js.i])
       .pipe(gulp.dest(dist));
   }));
@@ -66,6 +67,7 @@ gulp.task('css', () => gulp
   .src([path.css.i])
   .pipe(envProd ? noop() : sourcemaps.init())
   .pipe(sass(sassOptions).on('error', sass.logError))
+  .pipe(postcss([require('precss'), require('autoprefixer'), require('postcss-uncss')]))
   .pipe(envProd ? noop() : sourcemaps.write())
   .pipe(gulp.dest(path.css.o)));
 

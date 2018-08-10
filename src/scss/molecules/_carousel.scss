@@ -1,0 +1,42 @@
+$carousel_slide-height: 30rem;
+.carousel_container {
+  @extend %semantic-list;
+  @extend %horizontal-list;
+  width: 100%;
+  height: ($carousel_slide-height / 2);
+  @media screen and (min-width: 40rem) {
+    height: $carousel_slide-height;
+  }
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+  .carousel_slide {
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    @extend %grid-inline;
+    @extend %grid_column;
+    @extend %align-stretch;
+    @extend %justify-start;
+    figure {
+      white-space: normal;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 1rem 1.5rem;
+      margin: 0;
+      img {
+        display: block;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: calc(100% - 4.5rem);
+        object-fit: cover;
+      }
+      figcaption {
+        @extend %ralphie;
+        padding: 1.5rem 0;
+      }
+    }
+  }
+}

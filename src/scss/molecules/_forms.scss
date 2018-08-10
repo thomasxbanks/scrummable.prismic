@@ -1,0 +1,69 @@
+.admin {
+  .card {
+    @extend %form-padding;
+    font-size: 0;
+    @extend %grid;
+    @extend %grid_row;
+    @extend %grid_wrap;
+    @extend %align-start;
+    @extend %justify-between;
+    fieldset {
+      padding: 1rem 1rem 3.5rem 1rem;
+      vertical-align: top;
+      position: relative;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    label {
+      &.input-full-width {
+        input,
+        textarea,
+        select,
+        .fancy-select,
+        .outline {
+          width: 100%;
+        }
+      }
+    }
+    .label-title,
+    label.label-title {
+      @extend %label-title;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    button {
+      &:not(:last-of-type) {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+.inline-title {
+  display: block;
+  width: 100%;
+  float: left;
+  .label-title {
+    display: inline-block !important;
+    width: auto !important;
+  }
+  .label-title+.label-title {
+    float: right;
+  }
+  a {
+    @extend %text-link;
+  }
+}
+
+.joined-forms_container {
+  form:first-of-type() {
+    border-bottom: 0;
+  }
+  form:last-of-type() {
+    border-top: 0;
+  }
+}
+
+form .item-12-12 {
+  width: calc(100% - 1rem);
+}

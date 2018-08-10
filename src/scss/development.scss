@@ -1,0 +1,60 @@
+/*
+  There is some jiggery-pokery going on in the frontend JavaScript that
+  will only load this file if we're on a local url.
+*/
+// Development Redline
+html.redline * {
+  outline: 1px solid rgba(255, 0, 0, 0.3) !important;
+}
+
+// For testing un-css
+.unused-class {
+  background: limegreen;
+}
+
+// For testing un-css
+.class-added-by-js {
+  outline: 1rem solid limegreen;
+}
+
+// For styling the styleguide only
+// Fingers crossed, that id shouldn't appear anywhere in the site
+// but best to be careful
+[id^="styleguide-"] {
+  background: lightgray;
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 2rem 0;
+  font-size: 0;
+  box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.66);
+  &:before {
+    content: attr(data-title);
+    font-size: 13px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    padding: 3px;
+    background: rgba(0, 0, 0, 0.66);
+    font-family: sans-serif;
+    color: rgba(255, 255, 255, 0.66);
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+}
+
+pre { 
+  font-family: "Operator Mono", "OperatorMono Nerd Font", "Dank Mono", "Fira Code", "Fira Mono", "Ubuntu Mono", "Liberation Mono", "Inconsolata", "Courier New", Courier, monospace; 
+  font-size: 1rem; 
+  line-height: 2em; 
+  display: block;
+  width: 100%;
+  padding: 1rem; 
+  margin: 0;
+  background: #242434; 
+  color: rgba(255,255,255,0.88); 
+  border-radius: 0.5rem; 
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,0.3); 
+  overflow: auto;
+}

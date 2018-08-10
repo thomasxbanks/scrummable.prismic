@@ -1,0 +1,5 @@
+input[type="url"] {
+  @extend %admin-input;
+  @extend %border_radius-std;
+  @extend %label-title;
+}

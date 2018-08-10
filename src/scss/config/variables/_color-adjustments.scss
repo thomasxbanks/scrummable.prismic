@@ -1,0 +1,9 @@
+// Shade is for darkening a color
+// eg darken($color, $shade-percentage);
+$shade-percentage: 10%;
+$shade-decimal: 0.1;
+
+// Shade is for lightening a color
+// eg lighten($color, $tint-percentage);
+$tint-percentage: 10%;
+$tint-decimal: 0.1;

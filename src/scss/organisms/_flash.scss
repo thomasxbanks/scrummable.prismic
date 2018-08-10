@@ -1,0 +1,68 @@
+	.flash-notification {
+		@include lineHeight(24px);
+		text-align: center;
+		padding: 0.5rem 2rem;
+		@media screen and (min-width: $breakpoint-min) {
+			padding: 0.75rem 4rem;
+		}
+		@extend %border_radius-lozenge;
+		@extend %richie;
+		font-weight: bold;
+		color: $clr_white;
+		min-width: 16rem;
+		max-width: 100%;
+		position: fixed;
+		top: 5rem;
+		left: 50%;
+		z-index: $z-modal;
+		transition: transform cubic-bezier(.48, .01, .46, 1.3) 300ms;
+		animation: flash 1 5000ms;
+		animation-fill-mode: forwards;
+	}
+
+	.flash-notification-failure {
+		background-color: $clr_failure;
+	}
+
+	.flash-notification-success {
+		background-color: $clr_success;
+	}
+
+	.flash-notification-warning {
+		background-color: $clr_warning;
+	}
+
+	.flash-notification-primary {
+		background-color: $clr_brand-primary;
+	}
+
+	.flash-notification[data-state="not-active"] {
+		display: none;
+	}
+
+	@keyframes flash {
+		0% {
+			transform: translate(-50%, -1000px);
+			opacity: 1;
+		}
+		8% {
+			transform: translate(-50%, 0.5rem);
+			opacity: 1;
+		}
+		10% {
+			transform: translate(-50%, 0);
+			opacity: 1;
+		}
+		90% {
+			transform: translate(-50%, 0);
+			opacity: 1;
+		}
+		99% {
+			transform: translate(-50%, 0);
+			opacity: 0;
+		}
+		100% {
+			transform: translate(-50%, -1000px);
+			opacity: 0;
+		}
+	}

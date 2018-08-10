@@ -1,0 +1,159 @@
+// Local variables
+$thumbnail-container_width: ($max-width + 2rem);
+$thumbnail_height: 13.75rem;
+$thumbnail_scale: scale3d(1.1, 1.1, 1.1);
+$thumbnail_offset: translate3d(0, 100%, 0);
+.thumbnail_container {
+  @extend %central-column;
+  max-width: $thumbnail-container_width;
+  padding: 0;
+  font-size: 0;
+  @extend %grid;
+  @extend %grid_row;
+  @extend %grid_wrap;
+  @extend %align-stretch;
+  @extend %justify-between;
+}
+
+.thumbnail {
+  display: inline-flex;
+  @extend %grid_column;
+  @extend %align-stretch;
+  @extend %justify-end;
+  margin: 0 1rem 2rem 1rem;
+  height: $thumbnail_height;
+  transition: transform $ease-main $speed-std;
+  position: relative;
+}
+
+// Thumbnail sizing
+.thumbnail {
+  width: calc( 50% - 2rem); // Minus (margin * 2) to create spacing for scale to flow into
+  @media screen and (min-width: $breakpoint-min) {
+    width: calc( 25% - 2rem); // Minus (margin * 2) to create spacing for scale to flow into
+  }
+}
+
+// The content overlay
+.thumbnail {
+  header {
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+    @media screen and (min-width: $breakpoint-min) {
+      padding: 1.5rem;
+    }
+    width: 100%;
+    height: $thumbnail_height;
+    @extend %grid;
+    @extend %grid_row;
+    @extend %grid_wrap;
+    @extend %align-end;
+    @extend %justify-center;
+    background: $clr_gradient-dark;
+    opacity: 0;
+    transition: $ease-main $speed-std,
+    transform $ease-swoosh $speed-std;
+    transition-delay: 0;
+    .content {
+      flex-grow: 1;
+      .title {
+        @extend %ralphie;
+        font-weight: 700;
+        color: $clr_white;
+        opacity: 0;
+        transform: $thumbnail_offset;
+        transition: opacity $ease-main $speed-std, transform $ease-swoosh $speed-std;
+        transition-delay: ($speed-std / 2);
+      }
+      .description {
+        @extend %ralphie;
+        font-weight: 300;
+        color: $clr_silver;
+        opacity: 0;
+        transform: $thumbnail_offset;
+        transition: opacity $ease-main $speed-std, transform $ease-swoosh $speed-std;
+        transition-delay: ($speed-std / 2 + 150ms);
+      }
+    }
+    button {
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity $ease-main $speed-std, transform $ease-swoosh $speed-std;
+      transition-delay: ($speed-std / 2 + 50ms);
+    }
+  }
+}
+
+// The image and flags
+.thumbnail {
+  .image_container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: $thumbnail_height;
+    transform: scale(1);
+    transition: transform $ease-swoosh $speed-std, box-shadow $ease-main $speed-std;
+    &:after {
+      // This is the little downward-pointing triangle
+      content: "";
+      opacity: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0.5rem 1rem 0 1rem;
+      border-color: $clr_brand-primary transparent transparent;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, calc(100% + 0.125rem));
+      transition: opacity $ease-main $speed-std;
+    }
+    img {
+      width: 100%;
+      height: $thumbnail_height;
+      object-fit: cover;
+      transition: opacity $ease-main $speed-fast;
+    }
+    .flag-new {
+      position: absolute;
+      top: 0.75rem;
+      right: 0;
+      z-index: 1;
+    }
+  }
+}
+
+// Altered states for the Thumbnails
+.thumbnail {
+  &[data-state="not-active"] {
+    .image_container {
+      background-color: $clr_black;
+      img {
+        opacity: $opacity_disabled-decimal;
+      }
+    }
+  }
+  &[data-state="is-active"] {
+    .image_container {
+      box-shadow: 0 0 0 0.125rem $clr_brand-primary;
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+  &:hover {
+    transform: $thumbnail_scale;
+    header,
+    header .title,
+    header .description,
+    button {
+      transform: none;
+      opacity: 1;
+    }
+  }
+}

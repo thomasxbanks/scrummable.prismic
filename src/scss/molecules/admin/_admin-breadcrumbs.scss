@@ -1,0 +1,22 @@
+.breadcrumbs_container {
+  ul {
+    @extend %semantic-list;
+    @extend %horizontal-list;
+    li {
+      @extend %bobby;
+      a {
+        color: $clr_brand-primary;
+        text-decoration: none;
+      }
+      &:not(:last-of-type) {
+        &:after {
+          content: ">";
+          display: inline-block;
+          margin: 0 1rem;
+          padding: 0;
+          line-height: inherit;
+        }
+      }
+    }
+  }
+}

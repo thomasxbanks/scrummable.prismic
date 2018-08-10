@@ -1,0 +1,8 @@
+%utility-link {
+  @extend %richie;
+  color: $clr_silver;
+  text-decoration: none;
+  &:hover {
+    color: darken($clr_silver, $shade-percentage);
+  }
+}

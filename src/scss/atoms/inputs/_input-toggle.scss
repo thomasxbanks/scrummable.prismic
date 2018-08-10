@@ -1,0 +1,63 @@
+.input-toggle {
+  input[type="checkbox"] {
+    position: absolute;
+    left: -50000px;
+    &:checked+.input-toggle-slider {
+      background-color: $clr_brand-primary;
+      border-color: $clr_brand-primary;
+      &:before {
+        border-color: $clr_brand-primary;
+        transform: none;
+      }
+      +.input-toggle-label {
+        .input-toggle-label-yes {
+          display: inline-block;
+        }
+        .input-toggle-label-no {
+          display: none;
+        }
+      }
+    }
+  }
+  >.input-toggle-slider {
+    position: relative;
+    cursor: pointer;
+    font-size: 0;
+    display: block;
+    float: left;
+    margin-right: 0.5rem;
+    width: 5rem;
+    height: 2.5rem;
+    @extend %border_radius-lozenge;
+    background-color: $clr_wildsand;
+    border: 1px solid $clr_silver;
+    transition: background-color $ease-main $speed-fast;
+    &:before {
+      position: absolute;
+      content: "";
+      @extend %border_radius-circle;
+      width: calc(2.5rem - 0.5rem);
+      height: calc(2.5rem - 0.5rem);
+      right: calc(0.25rem - 1px);
+      bottom: calc(0.25rem - 1px);
+      background-color: $clr_white;
+      transform: translate3d(-2.5rem, 0, 0);
+      transition: transform $ease-swoosh $speed-std, background-color $ease-main $speed-fast;
+      box-shadow: 0 0.0625rem 0.24rem 0 rgba($clr_black, $opacity-shadow-decimal);
+    }
+    +.input-toggle-label {
+      .input-toggle-label-yes {
+        display: none;
+      }
+      .input-toggle-label-no {
+        display: inline-block;
+      }
+    }
+  }
+  .input-toggle-label {
+    @extend %richie;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 2.5rem;
+  }
+}

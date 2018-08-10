@@ -1,0 +1,18 @@
+$baseline: 1rem !default;
+%semantic-list {
+  // A semantic list is where a list element is required semantically but
+  // the designer doesn't want bullet-points showing
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+%horizontal-list {
+  // A horizontal list is where a list element is required semantically but
+  // with each <li> side-by-side instead of stacked as is default
+  font-size: 0; // this lets the inline-block elements bump uglies without a gap
+  li {
+    display: inline-block;
+    font-size: $baseline; // This resets the font-size: 0; above but allows for it to be overriden by actual styles
+  }
+}

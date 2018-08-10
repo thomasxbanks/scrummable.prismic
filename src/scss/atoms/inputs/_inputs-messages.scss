@@ -1,0 +1,11 @@
+.input-validation-message {
+  position: absolute;
+  bottom: auto;
+  left: 1rem;
+  z-index: $z-form;
+  display: none;
+  @extend %richie;
+  color: $clr_failure;
+  @include lineHeight(32px);
+  padding: 0.5rem 1rem;
+}

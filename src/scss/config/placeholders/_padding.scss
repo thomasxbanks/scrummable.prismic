@@ -1,0 +1,72 @@
+%padding-top-standard {
+  padding-top: 1.5rem;
+}
+
+%padding-top-narrow {
+  padding-top: 0.75rem;
+}
+
+%padding-right-standard {
+  padding-right: 2rem;
+}
+
+%padding-right-narrow {
+  padding-right: 1rem;
+}
+
+%padding-bottom-standard {
+  padding-bottom: 4rem;
+}
+
+%padding-bottom-narrow {
+  padding-bottom: 2rem;
+}
+
+%padding-left-standard {
+  padding-left: 2rem;
+}
+
+%padding-left-narrow {
+  padding-left: 1rem;
+}
+
+%padding-vertical-standard {
+  @extend %padding-top-standard;
+  @extend %padding-bottom-standard;
+}
+
+%padding-vertical-narrow {
+  @extend %padding-top-narrow;
+  @extend %padding-bottom-narrow;
+}
+
+%padding-horizontal-standard {
+  @extend %padding-right-standard;
+  @extend %padding-left-standard;
+}
+
+%padding-horizontal-narrow {
+  @extend %padding-right-narrow;
+  @extend %padding-left-narrow;
+}
+
+%padding-standard {
+  @extend %padding-top-standard;
+  @extend %padding-right-standard;
+  @extend %padding-bottom-standard;
+  @extend %padding-left-standard;
+}
+
+%padding-narrow {
+  @extend %padding-top-narrow;
+  @extend %padding-right-narrow;
+  @extend %padding-bottom-narrow;
+  @extend %padding-left-narrow;
+}
+
+%form-padding {
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+}

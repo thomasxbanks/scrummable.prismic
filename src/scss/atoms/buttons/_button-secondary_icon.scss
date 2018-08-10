@@ -1,0 +1,52 @@
+[class^="button"] {
+  &[class*="-secondary_icon-"] {
+    @extend %button-secondary;
+    position: relative;
+    padding-right: 2rem;
+    &[class*="-brand"] {
+      color: $clr_brand-primary;
+      svg g {
+        fill: $clr_brand-primary;
+      }
+      &:hover {
+        color: darken($clr_brand-primary, $shade-percentage);
+      }
+    }
+    &[class*="-dark"] {
+      color: $clr_mineshaft;
+      svg g {
+        fill: $clr_mineshaft;
+      }
+      &:hover {
+        color: darken($clr_mineshaft, $shade-percentage);
+      }
+    }
+    &[class*="-light"] {
+      color: $clr_white;
+      svg g {
+        fill: $clr_white;
+      }
+      &:hover {
+        color: darken($clr_white, $shade-percentage);
+      }
+    }
+    &[class*="-danger"] {
+      color: $clr_failure;
+      svg g {
+        fill: $clr_failure;
+      }
+      &:hover {
+        color: darken($clr_failure, $shade-percentage);
+      }
+    }
+    svg {
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 1em;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+}

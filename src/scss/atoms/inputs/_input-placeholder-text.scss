@@ -1,0 +1,27 @@
+::-webkit-input-placeholder {
+  // Chrome/Opera/Safari
+  font-family: $font_face-main;
+  @include fontSize(13px);
+  color: $clr_silver;
+}
+
+::-moz-placeholder {
+  // Firefox 19+
+  font-family: $font_face-main;
+  @include fontSize(13px);
+  color: $clr_silver;
+}
+
+:-ms-input-placeholder {
+  // IE 10+
+  font-family: $font_face-main;
+  @include fontSize(13px);
+  color: $clr_silver;
+}
+
+:-moz-placeholder {
+  // Firefox 18-
+  font-family: $font_face-main;
+  @include fontSize(13px);
+  color: $clr_silver;
+}

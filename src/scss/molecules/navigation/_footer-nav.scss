@@ -1,0 +1,16 @@
+#site-footer {
+  nav {
+    ul {
+      @extend %semantic-list;
+      @extend %horizontal-list;
+      li {
+        a {
+          @extend %utility-link;
+        }
+        &:not(:last-of-type) a {
+          margin-right: 2rem;
+        }
+      }
+    }
+  }
+}

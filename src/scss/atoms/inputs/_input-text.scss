@@ -1,0 +1,5 @@
+input[type="text"] {
+  @extend %admin-input;
+  @extend %border_radius-std;
+  @extend %label-title;
+}

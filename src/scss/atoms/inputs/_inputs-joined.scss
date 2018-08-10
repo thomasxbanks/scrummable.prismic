@@ -1,0 +1,70 @@
+.input-joined_label_container,
+.input-joined_row {
+  display: block;
+  font-size: 0;
+  .repeater_container & {
+    display: inline-block;
+    width: calc(100% - 5rem);
+  }
+  margin-right: 1rem;
+  .label_container .label-title {
+    .admin .card & {
+      display: inline-block;
+    }
+  }
+  .input-validation-message {
+    padding-left: 0;
+  }
+}
+
+.input-joined_row {
+  &:not(:first-of-type) {
+    margin-top: 0.5rem;
+  }
+  button[class^="button-icon-only"] {
+    float: right;
+    margin-top: 0.5rem;
+  }
+}
+
+.label_container {
+  span {
+    display: inline-block;
+    @extend %label-title;
+  }
+}
+
+.label_container span:nth-of-type(1) {
+  width: 66.66%;
+}
+
+.label_container span:nth-of-type(2) {
+  width: 33.33%;
+  text-align: right;
+}
+
+.input-joined_row>span {
+  position: relative;
+  display: inline-block;
+  margin-right: 0 !important;
+  padding-bottom: 2.5rem;
+  input {
+    width: 100%;
+  }
+  &:nth-of-type(1) {
+    width: 66.66%;
+    input {
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      border-right: 0 !important;
+    }
+  }
+  &:nth-of-type(2) {
+    width: 33.33%;
+    text-align: right;
+    input {
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+  }
+}

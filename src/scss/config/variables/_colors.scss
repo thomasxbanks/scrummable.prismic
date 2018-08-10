@@ -1,0 +1,28 @@
+// Grayscale
+$clr_black: black;
+$clr_mineshaft: #333;
+$clr_boulder: #666;
+$clr_silver: #b3b3b3;
+$clr_wildsand: #ececec;
+$clr_white: white;
+// Utility
+$clr_success: #62b741;
+$clr_warning: #fdba01;
+$clr_failure: #e53e3c;
+// Brand
+$clr_scr-raspberry: #a1213d;
+$clr_scr-candlelight: #fade00;
+// Brand hierarchy
+$clr_brand-primary: $clr_scr-raspberry;
+$clr_brand-secondary: $clr_scr-candlelight;
+// Volatility Meter
+$volatility-casual: #62b741;
+$volatility-casual-balanced: #b6b91f;
+$volatility-balanced: #fdba01;
+$volatility-balanced-aggressive: #f4841b;
+$volatility-aggressive: #e53e3c;
+// Transparencies
+$clr_transparent: rgba(255, 255, 255, 0); // White with zero opacity works best in Safari
+$clr_black-75: rgba($clr_black, 0.75);
+// Gradients
+$clr_gradient-dark: linear-gradient( $clr_transparent 50%, $clr_transparent 50%, $clr_black-75 100%);

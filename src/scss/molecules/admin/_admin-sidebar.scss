@@ -1,0 +1,19 @@
+.admin-sidebar {
+  @media screen and (max-width: $breakpoint-max) {
+    width: 100%;
+  }
+  @media screen and (min-width: $breakpoint-min) {
+    @supports (position: sticky) {
+      // Progressive enhancement. 
+      // Stick the sidebar to the top of the page without JavaScript
+      -webkit-position: sticky;
+      position: sticky;
+      top: 6rem;
+    }
+  }
+  .sidebar-section-title {
+    display: block;
+    @extend %ralphie;
+    margin-bottom: 1rem;
+  }
+}

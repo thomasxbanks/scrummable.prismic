@@ -1,0 +1,6 @@
+input[type="file"] {
+  @extend %admin-input;
+  @extend %border_radius-std;
+  @extend %label-title;
+  line-height: 0.75rem;
+}

@@ -1,0 +1,121 @@
+section {
+  &[class^="section-theme"] {
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+  }
+  &.section-theme-brand {
+    @extend %theme-brand;
+  }
+  &.section-theme-dark {
+    @extend %theme-dark;
+  }
+  &.section-theme-light {
+    @extend %theme-light;
+  }
+  &.section-theme-white {
+    @extend %theme-white;
+  }
+  .section-title {
+    @extend %paulie;
+    @extend %central-column;
+  }
+}
+
+.page-title {
+  @extend %paulie;
+  color: $clr_black;
+}
+
+.admin .page-title {
+  @extend %christopher;
+  color: $clr_black;
+}
+
+.page-divider {
+  border: 0;
+  background: $clr_silver;
+  width: 100%;
+  height: 0.0625rem;
+  margin: 2rem 0;
+}
+
+.admin {
+  background: $clr_wildsand;
+}
+
+.admin-panel-with-sidebar, .admin-panel {
+  @extend %grid;
+  @extend %grid_row;
+  @extend %grid_wrap;
+  @extend %align-start;
+  @extend %justify-between;
+}
+
+%narrow-form {
+  form,
+  .hero-text {
+    max-width: 30rem;
+    margin-right: auto;
+    margin-left: auto;  
+  }
+  
+  form {
+    button {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  .hero-text {
+    text-align: center;
+    .section-title {
+      @extend %paulie;
+    }
+  }
+}
+
+.admin.login, .admin[class*="password"] {
+  @extend %narrow-form;
+}
+
+.hero-text small {
+  @extend %richie;
+  @include fontSize(12px);
+  font-weight: bold;
+}
+
+.section-legal-text {
+  @extend %central-column;
+  padding-top: 0 !important;
+  p, li, a {
+    @extend %richie;
+  }
+  p {
+    padding: 1em 0 0.5em 0;
+  }
+  a {
+    @extend %text-link;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    display: block;
+    padding-top: 1.5em;
+  }
+  h1 {
+    @extend %tony;
+  }
+  h2 {
+    @extend %silvio;
+  }
+  h3 {
+    @extend %paulie;
+  }
+  h4 {
+    @extend %christopher;
+  }
+  @for $index from 1 through 6 {
+    h#{$index} + h#{$index + 1}{
+      padding-top: 0;
+    }
+  }
+}

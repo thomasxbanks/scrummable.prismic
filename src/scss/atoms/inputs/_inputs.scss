@@ -1,0 +1,13 @@
+%input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: none;
+}
+
+input {
+  @extend %input;
+}
+
+.input-minimal {
+  font-size: 0;
+}

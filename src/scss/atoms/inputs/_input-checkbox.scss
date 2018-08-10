@@ -1,0 +1,64 @@
+// Fancy checkbox
+.input-checkbox-fancy {
+  display: inline-block;
+  width: 100%;
+  max-width: 13rem;
+  padding: 0.5rem 0;
+  input[type="checkbox"] {
+    position: absolute;
+    left: -50000px;
+    &:checked+.input-checkbox-check {
+      svg {
+        transform: none;
+      }
+    }
+  }
+  >.input-checkbox-check {
+    display: inline-flex;
+    vertical-align: top;
+    @extend %border_radius-circle;
+    @extend %button-icon-only-small;
+    @extend %input-border;
+    @extend %dead-center;
+    svg {
+      transform: scale(0);
+      transition: transform $ease-swoosh $speed-fast;
+    }
+  }
+  .input-checkbox-label {
+    @extend %richie;
+    @include lineHeight(40px);
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 1rem;
+  }
+}
+
+// Checkbox using an icon only
+.input-checkbox-icon {
+  font-size: 0;
+  input[type="checkbox"] {
+    position: relative;
+    left: -50000px;
+    &:checked+.input-checkbox-icon {
+      svg {
+        transform: none;
+      }
+    }
+  }
+  >.input-checkbox-icon {
+    @extend %button-icon-only;
+    @extend %button-icon-only-small;
+    @extend %border_radius-circle;
+    @extend %input-border;
+    vertical-align: top;
+    float: left;
+    &:not(:last-of-type) {
+      margin-right: 0.5rem;
+    }
+    svg {
+      transform: scale(0.8);
+      transition: transform $ease-swoosh $speed-fast;
+    }
+  }
+}

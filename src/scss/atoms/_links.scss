@@ -1,0 +1,30 @@
+[class*="-restricted"] {
+  cursor: not-allowed;
+  &:before {
+    content: url("../../views/icons/lock.svg");
+    display: inline-block;
+    width: 9px;
+    height: 12px;
+    line-height: 1em;
+  }
+}
+
+.topbar {
+  [class*="-restricted"] {
+    &:before {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.sidebar {
+  [class*="-restricted"] {
+    position: relative;
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: calc(-0.5rem - 9px);
+      transform: translateY(-50%);
+    }
+  }
+}

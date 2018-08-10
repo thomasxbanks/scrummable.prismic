@@ -1,0 +1,66 @@
+.admin-data-table_container {
+  @extend %card;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.admin-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  tr {
+    &:not(:last-of-type) {
+      th,
+      td {
+        border-bottom: 1px solid $clr_silver;
+      }
+    }
+    th {
+      @extend %bobby;
+      text-align: left;
+      vertical-align: middle;
+      padding: 1.5rem 2rem;
+    }
+    td {
+      @extend %richie;
+      text-align: left;
+      vertical-align: middle;
+      padding: 1.5rem 2rem;
+      &.data-table-type {
+        .icon_container {
+          display: inline-block;
+          width: 1rem;
+          text-align: center;
+          margin-right: 1rem;
+        }
+      }
+      &.data-table-thumbnail {
+        width: 4rem;
+        padding: 1rem;
+        img {
+          display: inline-block;
+          vertical-align: middle;
+          width: auto;
+          height: 3.5rem;
+          object-fit: contain;
+        }
+      }
+      min-width: 5rem;
+      max-width: 20rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &.is-loggedin>td:first-of-type() {
+      position: relative;
+      &:before {
+        content: "•";
+        color: $clr_success;
+        font-size: 2rem;
+        margin-left: -1.5rem;
+        margin-right: 0.5rem;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+}

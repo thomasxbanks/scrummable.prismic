@@ -1,0 +1,9 @@
+%card {
+  @extend %border_radius-std;
+  border: $border_width-thin solid $clr_silver;
+  background: $clr_white;
+}
+
+.card {
+  @extend %card;
+}

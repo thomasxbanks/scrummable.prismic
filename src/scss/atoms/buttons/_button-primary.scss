@@ -1,0 +1,34 @@
+[class^="button"] {
+  &[class*="-primary-"] {
+    @extend %button-primary;
+    @extend %border_radius-lozenge;
+    &[class*="-brand"] {
+      color: $clr_white;
+      background-color: $clr_brand-primary;
+      &:hover {
+        background-color: darken($clr_brand-primary, $shade-percentage);
+      }
+    }
+    &[class*="-dark"] {
+      color: $clr_white;
+      background-color: $clr_mineshaft;
+      &:hover {
+        background-color: darken($clr_mineshaft, $shade-percentage);
+      }
+    }
+    &[class*="-light"] {
+      color: $clr_brand-primary;
+      background-color: $clr_white;
+      &:hover {
+        background-color: darken($clr_white, $shade-percentage);
+      }
+    }
+    &[class*="-danger"] {
+      color: $clr_failure;
+      background-color: $clr_white;
+      &:hover {
+        background-color: darken($clr_white, $shade-percentage);
+      }
+    }
+  }
+}

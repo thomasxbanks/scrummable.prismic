@@ -1,0 +1,75 @@
+%teaser {
+  display: inline-block;
+  vertical-align: top;
+  padding: 1.5rem 0;
+}
+.teaser_container {
+  @extend %central-column;
+  font-size: 0;
+  .teaser_container-column {
+    @extend %grid;
+    @extend %grid_row;
+    @extend %grid_wrap;
+    @extend %align-stretch;
+    @extend %justify-between;
+    width: 100%;
+  }
+  @media screen and (min-width: $breakpoint-min) {
+    display: flex;
+  }
+}
+.teaser {
+  @extend %teaser;
+  img {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .title {
+    margin-top: 1em;
+  }
+  .content {
+    margin-top: 1em;
+  }
+}
+
+.teaser-large {
+  width: 100%;
+  img {
+    height: 10rem;
+    object-fit: cover;
+  }
+  .title {
+    @extend %christopher;
+  }
+  .content {
+    @extend %richie;
+  }
+  @media screen and (min-width: $breakpoint-min) {
+    width: calc(100% - 3rem);
+    img {
+      height: 25rem;
+    }
+  }
+}
+
+.teaser-small {
+  width: calc(50% - 0.5rem);
+  img {
+    height: 4rem;
+    object-fit: cover;
+  }
+  .title {
+    @extend %richie;
+  }
+  .content {
+    display: none;
+  }
+  @media screen and (min-width: $breakpoint-min) {
+    width: calc(50% - 0.75rem);
+    img {
+      height: 12.5rem;
+    }
+  }
+}

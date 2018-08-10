@@ -1,0 +1,237 @@
+%base {
+  font-smooth: auto;
+  font-size-adjust: none;
+  font-variant: normal;
+  font-kerning: none;
+  font-variant-ligatures: none;
+  font-style: normal;
+}
+
+%tony {
+  // Mobile/H1
+  @extend %base;
+  font-family: $font_face-accent-regular;
+  font-weight: 300;
+  @include fontSize(40px);
+  @include lineHeight(48px);
+  @media screen and (min-width: $breakpoint-min) {
+    // Desktop/H1
+    @include fontSize(56px);
+    @include lineHeight(64px);
+  }
+}
+
+%silvio {
+  // Mobile/H2
+  @extend %base;
+  font-family: $font_face-accent-regular;
+  font-weight: 300;
+  @include fontSize(32px);
+  @include lineHeight(40px);
+  @media screen and (min-width: $breakpoint-min) {
+    // Desktop/H2
+    @include fontSize(48px);
+    @include lineHeight(56px);
+  }
+}
+
+%paulie {
+  // Mobile/H3
+  @extend %base;
+  font-family: $font_face-accent-regular;
+  font-weight: 300;
+  @include fontSize(24px);
+  @include lineHeight(32px);
+  @media screen and (min-width: $breakpoint-min) {
+    // Desktop/H3
+    @include fontSize(32px);
+    @include lineHeight(48px);
+  }
+}
+
+%christopher {
+  // Mobile/H4
+  @extend %base;
+  font-family: $font_face-accent-regular;
+  font-weight: 300;
+  @include fontSize(20px);
+  @include lineHeight(32px);
+  @media screen and (min-width: $breakpoint-min) {
+    // Desktop/H4
+    @include fontSize(24px);
+    @include lineHeight(32px);
+  }
+}
+
+%ralphie {
+  // Mobile/H5
+  @extend %base;
+  font-family: $font_face-accent-regular;
+  font-weight: 300;
+  @include fontSize(14px);
+  @include lineHeight(24px);
+  @media screen and (min-width: $breakpoint-min) {
+    // Desktop/H5
+    @include fontSize(16px);
+    @include lineHeight(24px);
+  }
+}
+
+%richie {
+  // black for body copy, blue for links, red for error messages, grey for placeholders and footer, white for primary nav
+  @extend %base;
+  font-family: $font_face-main;
+  font-weight: normal;
+  @include fontSize(14px);
+  @include lineHeight(24px);
+}
+
+%bobby {
+  // Mobile/H6
+  @extend %base;
+  font-family: $font_face-main;
+  font-weight: bold;
+  @include fontSize(12px);
+  @include lineHeight(12px);
+  text-transform: uppercase;
+  @media screen and (min-width: $breakpoint-min) {
+    // Desktop/H6
+    @include fontSize(12px);
+    @include lineHeight(12px);
+  }
+}
+
+%junior {
+  // Unnamed button style
+  @extend %base;
+  font-family: $font_face-main;
+  font-weight: bold;
+  @include fontSize(14px);
+  @include lineHeight(14px);
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+}
+
+// // Influenced by BBC GEL guidelines (http://www.bbc.co.uk/gel/guidelines/typography)
+// // %SilentClasses for extension use only.
+// // @extend these basic font stylings for specific content blocks to maintain
+// // consistency across the build.
+// // Extra marks awwwarded for those who got the Sopranos references.
+// %tony {
+//   font-family: $font_face-accent-light;
+//   @include fontSize(50px);
+//   @include lineHeight(64px);
+//   font-smooth: auto;
+//   font-size-adjust: none;
+//   font-variant: normal;
+//   font-kerning: none;
+//   font-variant-ligatures: none;
+//   font-weight: 300;
+//   font-style: normal;
+// }
+// %silvio {
+//   font-family: $font_face-accent-light;
+//   @include fontSize(32px);
+//   @include lineHeight(40px);
+//   font-smooth: auto;
+//   font-size-adjust: none;
+//   font-variant: normal;
+//   font-kerning: none;
+//   font-variant-ligatures: none;
+//   font-weight: 300;
+//   font-style: normal;
+//   @media (min-width: $breakpoint-min) {
+//     @include fontSize(48px);
+//     @include lineHeight(56px);
+//   }
+// }
+// %paulie {
+//   font-family: $font_face-accent-regular;
+//   @include fontSize(24px);
+//   @include lineHeight(32px);
+//   font-smooth: auto;
+//   font-size-adjust: none;
+//   font-variant: normal;
+//   font-kerning: none;
+//   font-variant-ligatures: none;
+//   font-weight: 400;
+//   font-style: normal;
+//   @media (min-width: $breakpoint-min) {
+//     font-family: $font_face-accent-light;
+//     @include fontSize(32px);
+//     @include lineHeight(40px);
+//   }
+// }
+// %christopher {
+//   font-family: $font_face-accent-regular;
+//   @include fontSize(20px);
+//   @include lineHeight(28px);
+//   font-smooth: auto;
+//   font-size-adjust: none;
+//   font-variant: normal;
+//   font-kerning: none;
+//   font-variant-ligatures: none;
+//   font-weight: 400;
+//   font-style: normal;
+//   @media (min-width: $breakpoint-min) {
+//     @include fontSize(24px);
+//     @include lineHeight(32px);
+//   }
+// }
+// %ralphie {
+//   font-family: $font_face-accent-light;
+//   @include fontSize(14px);
+//   @include lineHeight(20px);
+//   font-smooth: auto;
+//   font-size-adjust: none;
+//   font-variant: normal;
+//   font-kerning: none;
+//   font-variant-ligatures: none;
+//   font-weight: 300;
+//   font-style: normal;
+//   @media (min-width: $breakpoint-min) {
+//     @include fontSize(16px);
+//     @include lineHeight(24px);
+//   }
+// }
+// %richie {
+//   font-family: $font_face-main;
+//   @include fontSize(14px);
+//   @include lineHeight(20px);
+//   font-smooth: auto;
+//   font-size-adjust: none;
+//   font-variant: normal;
+//   font-kerning: none;
+//   font-variant-ligatures: none;
+//   font-weight: normal;
+//   font-style: normal;
+//   @media (min-width: $breakpoint-min) {
+//     @include fontSize(16px);
+//     @include lineHeight(24px);
+//   }
+// }
+// %bobby {
+//   font-family: $font_face-main;
+//   @include fontSize(12px);
+//   @include lineHeight(12px);
+//   font-smooth: auto;
+//   font-size-adjust: none;
+//   font-variant: normal;
+//   font-kerning: none;
+//   font-variant-ligatures: none;
+//   text-transform: uppercase;
+//   font-weight: bold;
+//   font-style: normal;
+// }
+// %junior {
+//   font-family: $font_face-main;
+//   @include fontSize(14px);
+//   @include lineHeight(24px);
+//   font-smooth: auto;
+//   font-size-adjust: none;
+//   font-variant: normal;
+//   font-kerning: none;
+//   font-variant-ligatures: none;
+//   font-weight: normal;
+//   font-style: normal;
+// }

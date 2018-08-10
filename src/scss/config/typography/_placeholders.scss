@@ -1,0 +1,10 @@
+%text-link {
+  color: $clr_brand-primary;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-skip-ink: auto;
+  text-decoration-skip: edges;
+  &:focus {
+    outline: 0.0625rem solid $clr_brand-primary;
+  }
+}

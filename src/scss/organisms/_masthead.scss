@@ -1,0 +1,61 @@
+#masthead {
+  position: fixed;
+  top: 0;
+  z-index: $z-masthead;
+  display: block;
+  width: 100%;
+  background-color: $clr_black;
+  transition: transform $ease-main $speed-std, background-color $ease-main $speed-std;
+  &[data-conditional="true"][data-state="not-visible"] {
+    transform: translateY(-100%);
+  }
+  &[data-conditional="true"][data-state="is-visible"] {
+    transform: none;
+  }
+  .inner {
+    background: $clr_transparent;
+    font-size: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    @extend %padding-horizontal;
+    @extend %grid;
+    @extend %grid_row;
+    @extend %align-center;
+    @extend %justify-between;
+    &.masthead-mobile {
+      @media screen and (min-width: $breakpoint-min) {
+        display: none;
+      }
+    }
+    &.masthead-desktop {
+      @media screen and (max-width: $breakpoint-max) {
+        display: none;
+      }
+      .topbar {
+        padding: 0.5rem 3rem;
+        flex-grow: 1;
+      }
+    }
+  }
+  .companyLogo {
+    @extend %christopher;
+    color: white;
+    text-decoration: none;
+    @include lineHeight(40px);
+    svg {
+      width: 2rem;
+      height: 2rem;
+      object-fit: cover;
+      vertical-align: bottom;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.icon-nav_container {
+  button {
+    &:not(:last-of-type) {
+      margin-right: 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,137 @@
+%label-title {
+  @extend %ralphie;
+}
+
+%label-text {
+  @extend %junior;
+}
+
+%input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  outline: none;
+}
+
+%input-border {
+  border: $border_width-thin solid $clr_silver;
+}
+
+%input-focus {
+  border-color: transparent !important;
+  outline: 1px dotted $clr_brand-primary !important;
+}
+
+%checkbox-focus {
+  border: 2px solid $clr_brand-primary !important;
+}
+
+%toggle-focus {
+  border: 2px solid $clr_brand-primary !important;
+}
+
+%admin-input {
+  @extend %input;
+  @extend %input-border;
+  @extend %richie;
+  padding: 0.5rem 1rem;
+  line-height: 1.5rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 1px;
+  &:not(:last-of-type) {
+    margin-right: 1rem;
+  }
+  .input-invert & {
+    color: tomato;
+  }
+}
+
+[data-state="is-pristine"] {
+  background: none;
+  +[class^="input-checkbox-"] {
+    background: none;
+  }
+  &:focus {
+    @extend %input-focus;
+    +[class^="input-checkbox-"] {
+      @extend %checkbox-focus;
+    }
+    +.input-toggle-slider {
+      @extend %toggle-focus;
+      &:before {
+        right: calc(0.25rem - 2px);
+        bottom: calc(0.25rem - 2px);
+      }
+    }
+    +.outline {
+      @extend %input-focus;
+    }
+  }
+}
+
+[data-state="not-pristine"] {
+  &:invalid {
+    box-shadow: none;
+    border-color: $clr_failure;
+    position: relative;
+    +[class^="input-checkbox-"] {
+      border-color: $clr_failure;
+    }
+  }
+  &:valid {
+    border-color: $clr_success;
+    +[class^="input-checkbox-"] {
+      border-color: $clr_success;
+      background: none;
+    }
+    +.input-toggle-slider {
+      border-color: $clr_success;
+    }
+    +.outline {
+      border-color: $clr_success;
+    }
+  }
+  &:focus {
+    @extend %input-focus;
+    +[class^="input-checkbox-"] {
+      @extend %checkbox-focus;
+    }
+    +.input-toggle-slider {
+      @extend %toggle-focus;
+      &:before {
+        right: calc(0.25rem - 2px);
+        bottom: calc(0.25rem - 2px);
+      }
+    }
+    +.outline {
+      @extend %input-focus;
+    }
+  }
+}
+
+[data-state="is-match"],
+[data-state="not-match"] {
+  .label-title {
+    display: block;
+    width: 100%;
+  }
+  .label-title:after {
+    display: block;
+    line-height: 100%;
+    float: right;
+  }
+}
+
+[data-state="is-match"] {
+  .label-title:after {
+    content: "👍";
+  }
+}
+
+[data-state="not-match"] {
+  .label-title:after {
+    content: "👎";
+  }
+}
