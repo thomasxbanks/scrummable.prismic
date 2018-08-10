@@ -1,0 +1,8 @@
+<%- contentFor('hero') %>
+  <%- include('./_partials/hero.ejs', {
+    image: data.image,
+    title: data.title
+  }) %>
+<%- contentFor('body') %>
+  <%- PrismicDOM.RichText.asHtml(data.description, ctx.linkResolver) %>
+

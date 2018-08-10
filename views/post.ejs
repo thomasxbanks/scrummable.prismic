@@ -1,0 +1,32 @@
+<%- contentFor('hero') %>
+  <%- include('./_partials/hero.ejs', {
+    image: data.post_hero_image
+  }) %>
+<%- contentFor('body') %>
+  <article>
+    <%- PrismicDOM.RichText.asHtml(data.post_title, ctx.linkResolver) %>
+    <% data.body.forEach(function(slice){ %> 
+      <% if (slice.slice_type == "body_copy") { %>
+        <%- PrismicDOM.RichText.asHtml(slice.primary.body_copy, ctx.linkResolver) %>
+      <% } %> 
+      
+      <% if (slice.slice_type == "title") { %>
+          <h2><%- PrismicDOM.RichText.asText(slice.primary.section_title, ctx.linkResolver) %></h2>
+      <% } %>
+
+      <% if (slice.slice_type == "pull_quote") { %>
+          <blockquote>
+            <%- PrismicDOM.RichText.asText(slice.primary.quote_text, ctx.linkResolver) %>
+            <% if (slice.primary.citation) { %>
+              <cite><%- PrismicDOM.RichText.asText(slice.primary.citation, ctx.linkResolver) %></cite>
+            <% } %>
+          </blockquote>
+      <% } %>
+    
+      <% if (slice.slice_type == "image") { %>
+        <figure>
+          <img src="<%= slice.primary.image.url %>" alt="<%= slice.primary.image.alt_text %>" />
+        </figure>
+      <% } %>
+    <% }) %>
+  </article>

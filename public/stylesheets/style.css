@@ -1,0 +1,278 @@
+html {
+  font-size: 18px;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(18px + 6 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+html * {
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  background: white;
+  display: block;
+  width: 100%;
+}
+
+.page_hero {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Forum", Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+  display: block;
+  padding: 0;
+  margin: 5rem 0 1em 0;
+}
+
+h1 {
+  font-size: calc(1rem * 1.33 * 1.33 * 1.33);
+}
+
+h2 {
+  font-size: calc(1rem * 1.33 * 1.33);
+}
+
+h3 {
+  font-size: calc(1rem * 1.33);
+}
+
+h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.33px;
+}
+
+h5 {
+  font-size: calc(1rem / 1.33);
+  text-transform: uppercase;
+  letter-spacing: 1.33px;
+}
+
+h6 {
+  font-size: calc(1rem / 1.33);
+  text-transform: uppercase;
+  letter-spacing: 1.33px;
+  opacity: 0.66;
+}
+
+.container {
+  width: 100%;
+  max-width: 120ch;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+aside {
+  width: 32rem;
+  padding: 1rem;
+  background: whitesmoke;
+}
+
+aside div {
+  position: sticky;
+  top: 0;
+  padding: 1rem 0;
+}
+
+aside a {
+  display: block;
+  color: dimgray;
+  text-transform: initial;
+  text-decoration: none;
+  font-size: small;
+  line-height: 2;
+  transition: ease 300ms;
+  padding-left: 0.25rem;
+}
+
+aside a:hover {
+  color: #a1213d;
+}
+
+aside a[data-state="is-active"] {
+  box-shadow: inset 0.0625rem 0 0 #a1213d;
+}
+
+aside a:before {
+  font-size: 10px;
+  opacity: 0.4;
+  margin-right: 1ch;
+}
+
+aside a.h1 {
+  text-indent: 0ch;
+}
+
+aside a.h2 {
+  text-indent: 1ch;
+}
+
+aside a.h3 {
+  text-indent: 2ch;
+}
+
+aside a.h4 {
+  text-indent: 3ch;
+}
+
+aside a.h5 {
+  text-indent: 4ch;
+}
+
+aside a.h6 {
+  text-indent: 5ch;
+}
+
+aside a.h1:before {
+  content: "H1";
+}
+
+aside a.h2:before {
+  content: "H2";
+}
+
+aside a.h3:before {
+  content: "H3";
+}
+
+aside a.h4:before {
+  content: "H4";
+}
+
+aside a.h5:before {
+  content: "H5";
+}
+
+aside a.h6:before {
+  content: "H6";
+}
+
+article {
+  padding: 1rem 2rem;
+  /* margin: 0 auto; */
+  max-width: 60ch;
+}
+
+p {
+  display: block;
+  line-height: 1.3em;
+  font-size: 1rem;
+  padding: 0;
+  margin: 1em 0 2em 0;
+}
+
+.content p:first-of-type {
+  font-size: 1.25em;
+  font-weight: 100;
+}
+
+@media screen and (min-width: 24.15em) {
+  /* 21em "gate" * 1.15 font-size */
+  p {
+    line-height: calc(1.3em + (1.5 - 1.3) * ((100vw - 21em) / (35 - 21)));
+  }
+}
+
+@media (min-width: 40.25em) {
+  /* 35em "gate" * 1.15 font-size */
+  p {
+    line-height: 1.5em;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+}
+
+.content img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration-skip: initial;
+  color: #eb1414;
+}
+
+blockquote {
+  display: block;
+  margin: 0;
+  padding: 1rem;
+  font-size: 1.25em;
+  font-weight: 100;
+  border-left: 0.0625em solid #eb1414;
+}
+
+blockquote cite {
+  display: block;
+  font-size: 0.6em;
+  margin-top: 1em;
+}
+
+figure {
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.15);
+}
+
+figure img {
+  display: block;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+figcaption {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  background: whitesmoke;
+  font-size: 0.75rem;
+}
+
+#site-header {
+  background: linear-gradient(45deg, #a1213d, #eb1414);
+  color: white;
+  padding: 1rem;
+}
+
+#site-footer {
+  background: linear-gradient(45deg, #303030, #151515);
+  color: white;
+  padding: 1rem;
+}
