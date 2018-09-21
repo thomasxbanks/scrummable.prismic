@@ -2,6 +2,8 @@
 // For Gulp
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
+const browserSync = require('browser-sync');
+const nodemon = require('nodemon');
 const watch = require('gulp-watch');
 const clean = require('gulp-clean');
 const sourcemaps = require('gulp-sourcemaps');
@@ -10,6 +12,9 @@ const noop = require('gulp-noop');
 // For Css
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
+const cssPrecss = require('precss');
+const cssAutoprefixer = require('autoprefixer');
+const purgecss = require('gulp-purgecss');
 
 // For Js
 const babel = require('gulp-babel');
@@ -29,6 +34,10 @@ const path = {
     i: `${root + src}js/**/*.js`,
     o: `${root + dist}javascript/`,
   },
+  views: {
+    i: `${root}views/**/*.ejs`,
+    o: `${root}`,
+  },
 };
 
 // Define options
@@ -38,6 +47,10 @@ const sassOptions = {
   errLogToConsole: !envProd,
   outputStyle: 'expanded',
 };
+const cssPlugins = [
+  cssPrecss(),
+  cssAutoprefixer(),
+];
 
 // TASKS
 gulp.task('default', (callback) => {
@@ -67,9 +80,13 @@ gulp.task('css', () => gulp
   .src([path.css.i])
   .pipe(envProd ? noop() : sourcemaps.init())
   .pipe(sass(sassOptions).on('error', sass.logError))
-  .pipe(postcss([require('precss'), require('autoprefixer'), require('postcss-uncss')]))
+  .pipe(postcss(cssPlugins))
   .pipe(envProd ? noop() : sourcemaps.write())
   .pipe(gulp.dest(path.css.o)));
+
+gulp.task('views', () => gulp
+  .src([path.views.i])
+  .pipe(noop()));
 
 // Javascript
 gulp.task('js', () => {
@@ -82,3 +99,28 @@ gulp.task('js', () => {
     .pipe(gulp.dest(path.js.o));
 });
 
+// Watching for changes
+gulp.task('watch', (callback) => {
+  runSequence(['nodemon'], () => {
+    browserSync.init({
+      proxy: 'http://localhost:3000',
+      files: ['src/**/*.*'],
+      port: 1337,
+    });
+    tasks.forEach((task) => {
+      gulp.watch(path[task].i, [task, browserSync.reload]);
+    });
+  });
+});
+
+gulp.task('nodemon', (cb) => {
+  let hasBooted = false;
+  return nodemon({
+    script: 'app.js',
+  }).on('start', () => {
+    if (!hasBooted) {
+      cb();
+      hasBooted = true;
+    }
+  });
+});

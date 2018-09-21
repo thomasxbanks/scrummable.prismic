@@ -1,0 +1,9 @@
+#site-footer {
+  @extend %padding-vertical-wide;
+  @extend %padding-horizontal-standard;
+  @extend %junior;
+  .inner {
+    @extend %central;
+    @extend %max-width;
+  }
+}

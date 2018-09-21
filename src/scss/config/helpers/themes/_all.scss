@@ -1,0 +1,48 @@
+@import 'white';
+@import 'light';
+@import 'dark';
+@import 'brand';
+@import 'white-ghost';
+@import 'light-ghost';
+@import 'dark-ghost';
+@import 'brand-ghost';
+[data-theme="theme-white"] {
+  @extend %theme-white;
+}
+
+[data-theme="theme-light"] {
+  @extend %theme-light;
+}
+
+[data-theme="theme-dark"] {
+  @extend %theme-dark;
+}
+
+[data-theme="theme-brand"] {
+  @extend %theme-brand;
+}
+
+[data-theme="theme-white-ghost"] {
+  @extend %theme-white-ghost
+}
+
+[data-theme="theme-light-ghost"] {
+  @extend %theme-light-ghost
+}
+
+[data-theme="theme-dark-ghost"] {
+  @extend %theme-dark-ghost
+}
+
+[data-theme="theme-brand-ghost"] {
+  @extend %theme-brand-ghost
+}
+
+[data-theme='night-mode'] {
+  [data-theme="white"] {
+    @extend %theme-dark;
+  }
+  [data-theme="light"] {
+    @extend %theme-brand;
+  }
+}

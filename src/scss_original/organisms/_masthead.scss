@@ -1,0 +1,38 @@
+#site-header {
+  position: fixed;
+  top: 0;
+  z-index: $z-masthead;
+  display: block;
+  width: 100%;
+  background-color: $clr_black;
+  transition: transform $ease-main $speed-std, background-color $ease-main $speed-std;
+  &[data-conditional="true"][data-state="not-visible"] {
+    transform: translateY(-100%);
+  }
+  &[data-conditional="true"][data-state="is-visible"] {
+    transform: none;
+  }
+  .inner {
+    background: $clr_transparent;
+    font-size: 0;
+    height: 5rem;
+    @extend %padding-horizontal-narrow;
+    @extend %grid;
+    @extend %grid_row;
+    @extend %align-center;
+    @extend %justify-between;
+  }
+  .company-logo {
+    @extend %paulie;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.icon-nav_container {
+  button {
+    &:not(:last-of-type) {
+      margin-right: 0.5rem;
+    }
+  }
+}

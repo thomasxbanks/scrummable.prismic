@@ -1,0 +1,18 @@
+[class*="-restricted"] {
+  cursor: not-allowed;
+  &:before {
+    content: url("../../views/icons/lock.svg");
+    display: inline-block;
+    width: 9px;
+    height: 12px;
+    line-height: 1em;
+  }
+}
+
+.read-more {
+  @extend %button;
+  @extend %button-ghost;
+  @extend %theme-brand-ghost;
+  @extend %border_radius-lozenge;
+  text-decoration: none;
+}

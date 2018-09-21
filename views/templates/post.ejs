@@ -1,0 +1,56 @@
+<%- contentFor('hero') %>
+  <%- include('../molecules/hero.ejs', {
+    image: data.post_hero_image
+  }) %>
+<%- contentFor('body') %>
+  <section class="post_container">
+    <aside>
+      <div class="inner">
+        <%- PrismicDOM.RichText.asHtml(data.post_title, ctx.linkResolver) %>
+        <ul class="post_meta">
+          <li>Wednesday, 24th September 2018</li>
+          <li>thomasxbanks</li>
+          <li>3 minute read</li>
+        </ul>
+        <ul class="category_list">
+          <li><a href="" class="flag">Business analysis</a></li>
+          <li><a href="" class="flag">Web development</a></li>
+          <li><a href="" class="flag">Product management</a></li>
+        </ul>
+      </div>
+    </aside>
+    <article class="post_container-column" data-theme="theme-white">
+      <a name="skip-to-content" id="skip-to-content"></a>
+      <div class="post">
+        <% data.body.forEach(function(slice){ %> 
+          <% if (slice.slice_type == "body_copy") { %>
+            <%- PrismicDOM.RichText.asHtml(slice.primary.body_copy, ctx.linkResolver) %>
+          <% } %> 
+          
+          <% if (slice.slice_type == "title") { %>
+              <h2><%- PrismicDOM.RichText.asText(slice.primary.section_title, ctx.linkResolver) %></h2>
+          <% } %>
+
+          <% if (slice.slice_type == "pull_quote") { %>
+              <blockquote>
+                <span>
+                  <%- PrismicDOM.RichText.asText(slice.primary.quote_text, ctx.linkResolver) %>
+                  <% if (slice.primary.citation) { %>
+                    <cite><%- PrismicDOM.RichText.asText(slice.primary.citation, ctx.linkResolver) %></cite>
+                  <% } %>
+                </span>
+              </blockquote>
+          <% } %>
+        
+          <% if (slice.slice_type == "image") { %>
+            <figure>
+              <img src="<%= slice.primary.image.url %>" alt="<%= slice.primary.image.alt_text %>" />
+                  <figcaption>
+                    <%- PrismicDOM.RichText.asText(slice.primary.caption, ctx.linkResolver) %>
+                  </figcaption>
+            </figure>
+          <% } %>
+        <% }) %>
+      </div>
+    </article>
+  </section>

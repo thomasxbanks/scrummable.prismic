@@ -1,0 +1,79 @@
+%base {
+  font-smooth: auto;
+  font-size-adjust: none;
+  font-variant: normal;
+  font-kerning: none;
+  font-variant-ligatures: none;
+  font-style: normal;
+}
+
+%tony {
+  @extend %base;
+  font-family: $font_face-accent;
+  font-weight: 300;
+  font-size: calc(1rem * 1.33 * 1.33);
+  @media screen and (min-width: $breakpoint-min) {
+    font-size: calc(1rem * 1.33 * 1.33 * 1.33);
+  }
+}
+
+%silvio {
+  @extend %base;
+  font-family: $font_face-accent;
+  font-weight: 300;
+  font-size: calc(1rem * 1.33);
+  @media screen and (min-width: $breakpoint-min) {
+    font-size: calc(1rem * 1.33 * 1.33);
+  }
+}
+
+%paulie {
+  @extend %base;
+  font-family: $font_face-accent;
+  font-weight: 300;
+  font-size: 1rem;
+  @media screen and (min-width: $breakpoint-min) {
+    font-size: calc(1rem * 1.33);
+  }
+}
+
+%christopher {
+  @extend %base;
+  font-family: $font_face-accent;
+  font-weight: 300;
+  font-size: calc(1rem / 1.33);
+  text-transform: uppercase;
+  letter-spacing: 1.33px;
+  @media screen and (min-width: $breakpoint-min) {
+    font-size: 1rem;
+  }
+}
+
+%ralphie {
+  @extend %base;
+  font-family: $font_face-main;
+  font-weight: normal;
+  font-size: calc(1rem * 1.33);
+}
+
+%richie {
+  @extend %base;
+  font-family: $font_face-main;
+  font-weight: normal;
+  font-size: 1rem
+}
+
+%bobby {
+  @extend %base;
+  font-family: $font_face-main;
+  font-weight: bold;
+  font-size: calc(1rem / 1.33);
+  text-transform: uppercase;
+  letter-spacing: 1.33px;
+}
+
+%junior {
+  @extend %base;
+  font-family: $font_face-main;
+  font-size: calc(1rem / 1.33);
+}

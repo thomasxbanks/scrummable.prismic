@@ -1,0 +1,10 @@
+.flag {
+  display: inline-block;
+  @extend %border_radius-lozenge;
+  padding: 0 1rem !important;
+  @extend %junior;
+  text-align: center !important;
+  @extend %theme-brand;
+  text-decoration: none;
+  margin: 0.5rem;
+}

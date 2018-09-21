@@ -1,0 +1,20 @@
+<article class="teaser" data-theme="theme-white">
+  <header>
+    <a href="<%= link %>">
+      <%- include('./hero.ejs', {
+        image: data.post_hero_image
+      }) %>
+    </a>
+    <div class="title">
+      <%- PrismicDOM.RichText.asHtml(data.post_title, ctx.linkResolver) %>
+    </div>
+  </header>
+  <% if (data.body.length > 0) { %>
+    <div class="content">
+      <%= data.body[0].primary.body_copy[0].text %>
+    </div>
+  <% } %>
+  <footer>
+    <a class="read-more" href="<%= link %>">Read more</a>
+  </footer>
+</article>

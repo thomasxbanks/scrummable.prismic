@@ -1,0 +1,19 @@
+#site-header {
+  @extend %theme-dark;
+  @extend %padding-vertical-narrow;
+  @extend %padding-horizontal-standard;
+  .inner {
+    @extend %central;
+    @extend %max-width;
+    @extend %grid;
+    @extend %grid_row;
+    @extend %align-center;
+    @extend %justify-between;
+  }
+}
+
+.company-logo {
+  @extend %bobby;
+  color: $clr_white;
+  text-decoration: none;
+}

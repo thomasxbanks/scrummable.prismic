@@ -1,0 +1,107 @@
+// Layout
+html {
+  -ms-text-size-adjust: 100%; // Prevents font resizing on Internet Explorer
+  -webkit-text-size-adjust: 100%; // Prevents font resizing on Chrome and Safari
+  * {
+    box-sizing: border-box !important; // Forces padding to be considered part of the width of an element
+    -webkit-font-smoothing: antialiased; // Cleans up font appearance on Chrome and Safari
+    -moz-osx-font-smoothing: grayscale; // Cleans up font appearance on Firefox
+  }
+}
+
+body {
+  margin: 0; // Remove browser applied margins
+  overflow-x: hidden; // Prevent side-scroll
+  @supports (scroll-behavior: smooth) {
+    scroll-behavior: smooth; // Progressive enhancement. Animates scroll to anchor without JavaScript
+  }
+}
+
+main,
+section {
+  display: block; // To fix IE not understanding these "new" tags
+}
+
+// Normalise the typography settings across the site
+// Style the highlight selection of web copy
+::selection {
+  color: white;
+  background: black;
+}
+
+// Reset headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+// Default bold settings
+b,
+strong {
+  font-weight: bold;
+}
+
+// Default italic settings
+i,
+em {
+  font-style: italic;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+// Buttons
+button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+// Forms
+fieldset {
+  border: 0;
+  margin: 0;
+}
+
+// remove all of the default styles on range inputs
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* Hides the slider so that custom slider can be made */
+  width: 100%;
+  /* Specific width is required for Firefox. */
+  background: transparent;
+  /* Otherwise white in Chrome */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none;
+  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+figure {
+  margin: 0;
+}

@@ -1,0 +1,32 @@
+%padding-top-narrow {
+  padding-top: 1rem;
+}
+
+%padding-right-narrow {
+  padding-right: 1rem;
+}
+
+%padding-bottom-narrow {
+  padding-bottom: 1rem;
+}
+
+%padding-left-narrow {
+  padding-left: 1rem;
+}
+
+%padding-vertical-narrow {
+  @extend %padding-top-narrow;
+  @extend %padding-bottom-narrow;
+}
+
+%padding-horizontal-narrow {
+  @extend %padding-right-narrow;
+  @extend %padding-left-narrow;
+}
+
+%padding-narrow {
+  @extend %padding-top-narrow;
+  @extend %padding-right-narrow;
+  @extend %padding-bottom-narrow;
+  @extend %padding-left-narrow;
+}

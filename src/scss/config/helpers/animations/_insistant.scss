@@ -1,0 +1,35 @@
+@keyframes insistant {
+  0% {
+    transform: rotate(0deg) scaleX(1) scaleY(1);
+  }
+  10% {
+    transform: rotate(-3deg) scaleX(0.8) scaleY(0.8);
+  }
+  20% {
+    transform: rotate(-3deg) scaleX(0.8) scaleY(0.8);
+  }
+  30% {
+    transform: rotate(3deg) scaleX(1.2) scaleY(1.2);
+  }
+  40% {
+    transform: rotate(-3deg) scaleX(1.2) scaleY(1.2);
+  }
+  50% {
+    transform: rotate(3deg) scaleX(1.2) scaleY(1.2);
+  }
+  60% {
+    transform: rotate(-3deg) scaleX(1.2) scaleY(1.2);
+  }
+  70% {
+    transform: rotate(3deg) scaleX(1.2) scaleY(1.2);
+  }
+  80% {
+    transform: rotate(-3deg) scaleX(1.2) scaleY(1.2);
+  }
+  90% {
+    transform: rotate(3deg) scaleX(1.2) scaleY(1.2);
+  }
+  100% {
+    transform: rotate(0deg) scaleX(1.2) scaleY(1.2);
+  }
+}

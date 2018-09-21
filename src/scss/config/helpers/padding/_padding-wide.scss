@@ -1,0 +1,32 @@
+%padding-top-wide {
+  padding-top: 5rem;
+}
+
+%padding-right-wide {
+  padding-right: 4rem;
+}
+
+%padding-bottom-wide {
+  padding-bottom: 5rem;
+}
+
+%padding-left-wide {
+  padding-left: 4rem;
+}
+
+%padding-vertical-wide {
+  @extend %padding-top-wide;
+  @extend %padding-bottom-wide;
+}
+
+%padding-horizontal-wide {
+  @extend %padding-right-wide;
+  @extend %padding-left-wide;
+}
+
+%padding-wide {
+  @extend %padding-top-wide;
+  @extend %padding-right-wide;
+  @extend %padding-bottom-wide;
+  @extend %padding-left-wide;
+}

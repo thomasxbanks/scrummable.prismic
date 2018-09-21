@@ -1,9 +1,74 @@
 %card {
-  @extend %border_radius-std;
-  border: $border_width-thin solid $clr_silver;
-  background: $clr_white;
+  @extend %theme-white !optional;
+  @extend %border_radius-standard !optional;
+  @extend %border_width-narrow;
+  @extend %border_style-solid;
+  @extend %box_shadow-standard;
 }
 
-.card {
+.teaser {
+  @extend %grid;
+  @extend %grid_column;
+  @extend %grid_wrap;
+  @extend %align-stretch;
+  @extend %justify-between;
+  vertical-align: top;
   @extend %card;
+  @extend %richie;
+  width: calc(33.33% - 2rem);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  img {
+    @extend %inline-image;
+    width: 100%;
+    height: 30ch;
+  }
+  .title {
+    width: 100%;
+    max-width: 60ch;
+    margin-right: auto;
+    margin-left: auto;
+    h1 {
+      @extend %tony;
+      @extend %padding-top-standard;
+      @extend %padding-horizontal-standard;
+      @extend %padding-bottom-narrow;
+    }
+  }
+  .post_meta {
+    @extend %richie;
+    @extend %padding-vertical-narrow;
+    @extend %padding-horizontal-standard;
+    width: 100%;
+    max-width: 60ch;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .content {
+    @extend %richie;
+    @extend %padding-vertical-narrow;
+    @extend %padding-horizontal-standard;
+    width: 100%;
+    max-width: 60ch;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  footer {
+    @extend %richie;
+    @extend %padding-vertical-narrow;
+    @extend %padding-horizontal-standard;
+    width: 100%;
+    max-width: 60ch;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .categories {
+    @extend %richie;
+    @extend %padding-vertical-narrow;
+    @extend %padding-horizontal-standard;
+    width: 100%;
+    max-width: 60ch;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }

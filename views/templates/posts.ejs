@@ -1,0 +1,11 @@
+<%- contentFor('hero') %>
+  <%# deliberately left blank %>
+<%- contentFor('body') %>
+  <section class="container central-column">
+    <% data.forEach((article)=>{ %>
+      <%- include('../molecules/teaser.ejs', {
+        'link': '/' + article.type + '/' + article.uid,
+        'data': article.data
+      }) %>
+    <% }) %>
+  </section>

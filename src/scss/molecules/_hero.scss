@@ -1,0 +1,17 @@
+$hero_width: 100%;
+$hero_height: 60vh;
+// Unchanging appearance settings
+.hero_container {
+  width: $hero_width;
+  height: $hero_height;
+  position: relative;
+  @extend %grid;
+}
+
+.hero_container {
+  .hero_image {
+    @extend %inline-image;
+    width: $hero_width;
+    height: $hero_height;
+  }
+}

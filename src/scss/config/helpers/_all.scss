@@ -1,5 +1,8 @@
-@import "reset";
-@import "functions";
-@import "mixins";
-@import "animations";
-@import "grid";
+@import 'reset';
+@import 'opacity/all';
+@import 'transitions/all';
+@import 'animations/all';
+@import 'borders/all';
+@import 'padding/all';
+@import 'shadows/all';
+@import 'themes/all';

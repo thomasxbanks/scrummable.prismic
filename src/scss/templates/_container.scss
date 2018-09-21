@@ -1,0 +1,12 @@
+.container {
+  @extend %grid;
+  @extend %grid_row;
+  @extend %grid_wrap;
+  @extend %align-stretch;
+  @extend %justify-between;
+}
+
+.central-column {
+  @extend %central;
+  @extend %max-width;
+}

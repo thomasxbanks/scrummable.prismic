@@ -1,0 +1,12 @@
+$stroke: 0.125rem;
+%border_width-narrow {
+  border-width: ($stroke / 1.33);
+}
+
+%border_width-standard {
+  border-width: $stroke;
+}
+
+%border_width-wide {
+  border-width: ($stroke * 1.33);
+}

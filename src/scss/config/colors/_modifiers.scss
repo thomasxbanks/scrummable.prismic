@@ -1,0 +1,23 @@
+// Shade is for darkening a color
+// eg darken($color, $clr_shade-percentage);
+$clr_shade-percentage: 10%;
+$clr_shade-decimal: 0.1;
+// Tint is for lightening a color
+// eg lighten($color, $clr_tint-percentage);
+$clr_tint-percentage: 10%;
+$clr_tint-decimal: 0.1;
+@mixin text-shade($theme) {
+  color: darken($theme, $clr_shade-percentage);
+}
+
+@mixin text-tint($theme) {
+  color: darken($theme, $clr_tint-percentage);
+}
+
+@mixin background-shade($theme) {
+  background-color: darken($theme, $clr_shade-percentage);
+}
+
+@mixin background-tint($theme) {
+  background-color: darken($theme, $clr_tint-percentage);
+}

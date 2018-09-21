@@ -1,0 +1,65 @@
+%base {
+  font-smooth: auto;
+  font-size-adjust: none;
+  font-variant: normal;
+  font-kerning: none;
+  font-variant-ligatures: none;
+  font-style: normal;
+}
+
+%tony {
+  @extend %base;
+  font-family: $font_face-accent;
+  font-weight: normal;
+  font-size: $font_size-xlg;
+}
+
+%silvio {
+  @extend %base;
+  font-family: $font_face-accent;
+  font-weight: normal;
+  font-size: $font_size-lrg;
+}
+
+%paulie {
+  @extend %base;
+  font-family: $font_face-accent;
+  font-weight: bold;
+  font-size: $font_size-med;
+}
+
+%christopher {
+  @extend %base;
+  font-family: $font_face-accent;
+  font-weight: normal;
+  font-size: $font_size-med;
+}
+
+%ralphie {
+  @extend %base;
+  font-family: $font_face-accent;
+  font-weight: normal;
+  font-size: $font_size-std;
+}
+
+%richie {
+  @extend %base;
+  font-family: $font_face-main;
+  font-weight: normal;
+  font-size: $font_size-std;
+}
+
+%bobby {
+  @extend %base;
+  font-family: $font_face-main;
+  font-weight: bold;
+  font-size: $font_size-sml;
+  text-transform: uppercase;
+  letter-spacing: 1.33px;
+}
+
+%junior {
+  @extend %base;
+  font-family: $font_face-main;
+  font-size: $font_size-xsm;
+}

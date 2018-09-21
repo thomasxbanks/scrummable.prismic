@@ -1,0 +1,32 @@
+%padding-top-standard {
+  padding-top: 2rem;
+}
+
+%padding-right-standard {
+  padding-right: 2rem;
+}
+
+%padding-bottom-standard {
+  padding-bottom: 2rem;
+}
+
+%padding-left-standard {
+  padding-left: 2rem;
+}
+
+%padding-vertical-standard {
+  @extend %padding-top-standard;
+  @extend %padding-bottom-standard;
+}
+
+%padding-horizontal-standard {
+  @extend %padding-right-standard;
+  @extend %padding-left-standard;
+}
+
+%padding-standard {
+  @extend %padding-top-standard;
+  @extend %padding-right-standard;
+  @extend %padding-bottom-standard;
+  @extend %padding-left-standard;
+}

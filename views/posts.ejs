@@ -1,9 +1,0 @@
-<%- contentFor('hero') %>
-  <h1>Posts</h1>
-<%- contentFor('body') %>
-  <% data.forEach((article)=>{ %>
-    <%- include('./_partials/teaser.ejs', {
-      'link': '/' + article.type + '/' + article.uid,
-      'data': article.data
-    }) %>
-  <% }) %>

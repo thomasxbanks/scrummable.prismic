@@ -1,0 +1,28 @@
+%border_radius {
+  background-clip: padding-box; // stops bg color from leaking outside the border
+}
+
+%border_radius-circle {
+  @extend %border_radius;
+  border-radius: 50%; // Just make sure, as I'm sure you will, that width === height or it won't actually be a circle!
+}
+
+%border_radius-lozenge {
+  @extend %border_radius;
+  border-radius: 500rem; // Jazzy little fix for creating a lozenge for an element of unknown size
+}
+
+%border_radius-standard {
+  @extend %border_radius;
+  border-radius: $stroke;
+}
+
+%border_radius-small {
+  @extend %border_radius;
+  border-radius: ($stroke / 1.33);
+}
+
+%border-radius-large {
+  @extend %border_radius;
+  border-radius: ($stroke * 1.33);
+}

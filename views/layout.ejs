@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<%- include('./_partials/html.ejs'); %>
-<body>
+<%- include('./organisms/html.ejs'); %>
+<body data-theme="theme-light" class="<% for (var i = 0; i < page.classes.length; i++) {%><%= page.classes[i] %><%}%>">
+    <%- include('./organisms/site-header.ejs'); %>
     <%- hero %>
-    <main class="container">
-      <section class="content">
-        <%- body %>
-      </section>
+    <main>
+      <%- body %>
     </main>
-    <script src="/javascript/app.js"></script>
+    <%- include('./organisms/site-footer.ejs'); %>
+    <%- include('./organisms/scripts.ejs'); %>
 </body>
 </html>

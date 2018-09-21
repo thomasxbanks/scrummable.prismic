@@ -1,0 +1,17 @@
+%text-link {
+  &:not(.flag) {
+    color: $clr_brand-primary;
+    font-weight: inherit;
+    font-size: inherit;
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+    text-decoration-skip: edges;
+    &:focus {
+      outline: $stroke solid $clr_brand-primary;
+      text-decoration: none;
+    }
+    &:hover {
+      @include text-shade($clr_brand-primary);
+    }
+  }
+}

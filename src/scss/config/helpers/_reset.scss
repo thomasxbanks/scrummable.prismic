@@ -1,3 +1,8 @@
+$baseline: calc(16px + (22 - 16) * (100vmin - 320px) / (960 - 320));
+html {
+  font-size: $baseline;
+}
+
 // Layout
 html {
   -ms-text-size-adjust: 100%; // Prevents font resizing on Internet Explorer
@@ -100,4 +105,8 @@ input[type="range"]::-ms-track {
   background: transparent;
   border-color: transparent;
   color: transparent;
+}
+
+figure {
+  margin: 0;
 }

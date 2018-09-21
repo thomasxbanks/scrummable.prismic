@@ -6,6 +6,7 @@ const PrismicConfig = require('./prismic-configuration');
 const Onboarding = require('./onboarding');
 const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const app = require('./config');
 
@@ -16,7 +17,6 @@ app.use(bodyParser.urlencoded({
 const PORT = app.get('port');
 
 app.listen(PORT, () => {
-  Onboarding.trigger();
   process.stdout.write(`Point your browser to: http://localhost:${PORT}\n`);
 });
 
@@ -45,6 +45,21 @@ app.use((req, res, next) => {
  *  --[ INSERT YOUR ROUTES HERE ]--
  */
 // add a new route in ./app.js
+const date = new Date();
+app.locals = {
+  views: `${__dirname}/views`,
+  site: {
+    name: '🎂 Scrummable',
+    description: 'Like showing the good jam to the man choking on the dry bread',
+    author: '@thomasxbanks',
+    contact: 'hi@scrummable.com',
+    colophon: 2014,
+  },
+  page: {
+    description: 'Like showing the good jam to the man choking on the dry bread',
+  },
+  thisYear: date.getFullYear(),
+};
 app.get('/page/:uid', (req, res, next) => {
   // We store the param uid in a variable
   const uid = req.params.uid;
@@ -54,6 +69,8 @@ app.get('/page/:uid', (req, res, next) => {
     // document is a document object, or null if there is no match
     console.log('doc.data', document.data);
     const data = document.data;
+    app.locals.page.description = data.post_title[0].text;
+    app.locals.page.classes = ['page'];
     if (data) {
       // Render the 'page' pug template file (page.pug)
       res.render('page', {
@@ -76,7 +93,10 @@ app.get('/post/:uid', (req, res, next) => {
     // document is a document object, or null if there is no match
     if (document) {
       const data = document.data;
-      res.render('post', {
+      app.locals.page.description = data.post_title[0].text;
+      app.locals.page.classes = ['post'];
+
+      res.render('templates/post', {
         data,
       });
     } else {
@@ -98,7 +118,10 @@ app.get('/', (req, res) => {
     // response is the response object, response.results holds the documents
     console.log('response *********************************', response.results);
     const data = response.results;
-    res.render('posts', { data });
+    app.locals.page.classes = ['post'];
+    res.render('templates/posts', {
+      data,
+    });
   });
 });
 

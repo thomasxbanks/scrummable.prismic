@@ -1,0 +1,6 @@
+[class^="button"] {
+  &[class*="-ghost-"] {
+    @extend %button-ghost;
+    @extend %border_radius-lozenge;
+  }
+}

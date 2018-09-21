@@ -1,0 +1,76 @@
+@import 'config/all';
+@import 'atoms/all';
+@import 'molecules/all';
+@import 'organisms/all';
+@import 'shame/all';
+$baseline: calc(16px + (24 - 16) * (100vmin - 320px) / (960 - 320));
+html {
+  font-size: $baseline;
+}
+
+.post_container {
+  aside {
+    width: 32rem;
+    padding: 1rem;
+  }
+  aside div {
+    position: sticky;
+    top: 6rem;
+  }
+  aside a {
+    display: block;
+    @extend %junior;
+    color: $clr_boulder;
+    text-transform: initial;
+    text-decoration: none;
+    transition: $ease-main $speed-std;
+    padding-left: 0.25rem;
+  }
+  aside a:hover {
+    color: darken($clr_scr-raspberry, $shade-percentage);
+  }
+  aside a[data-state="is-active"] {
+    box-shadow: inset 0.0625rem 0 0 darken($clr_scr-raspberry, $shade-percentage);
+  }
+  aside a:before {
+    font-size: 10px;
+    opacity: 0.4;
+    margin-right: 1ch;
+  }
+  aside a.h1 {
+    text-indent: 0ch;
+  }
+  aside a.h2 {
+    text-indent: 1ch;
+  }
+  aside a.h3 {
+    text-indent: 2ch;
+  }
+  aside a.h4 {
+    text-indent: 3ch;
+  }
+  aside a.h5 {
+    text-indent: 4ch;
+  }
+  aside a.h6 {
+    text-indent: 5ch;
+  }
+  aside a.h1:before {
+    content: "H1";
+  }
+  aside a.h2:before {
+    content: "H2";
+  }
+  aside a.h3:before {
+    content: "H3";
+  }
+  aside a.h4:before {
+    content: "H4";
+  }
+  aside a.h5:before {
+    content: "H5";
+  }
+  aside a.h6:before {
+    content: "H6";
+  }
+}

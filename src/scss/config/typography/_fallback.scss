@@ -1,0 +1,17 @@
+// The fallback font stack includes OS specific fonts followed by Emoji rendering fonts.
+$font_face-fallback: -apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Helvetica,
+Arial,
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol";
+// Various font stacks used in the build
+$font_face-main: $font_face-fallback;
+$font_face-accent: "Forum",
+$font_face-fallback;
+$font_face-utility: "Arial",
+$font_face-fallback;

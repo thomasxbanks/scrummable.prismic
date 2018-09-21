@@ -1,0 +1,47 @@
+%teaser {
+  display: inline-block;
+  vertical-align: top;
+  @extend %grid;
+  @extend %grid_column;
+  @extend %grid_wrap;
+  @extend %align-start;
+  @extend %justify-start;
+}
+
+.teaser {
+  @extend %teaser;
+  width: calc(50% - 1rem);
+  max-width: 60ch;
+  img {
+    @extend %inline-image;
+    @supports (object-fit: cover) {
+      height: 30ch;
+      object-fit: cover;
+    }
+  }
+  h1 {
+    display: block;
+    width: 100%;
+    margin: 0;
+    @extend %tony;
+    @extend %padding-top-standard;
+    @extend %padding-horizontal-standard;
+    @extend %padding-bottom-narrow;
+  }
+  .content {
+    display: block;
+    width: 100%;
+    @extend %richie;
+    @extend %padding-top-narrow;
+    @extend %padding-horizontal-standard;
+    @extend %padding-bottom-narrow;
+  }
+  footer {
+    display: block;
+    width: 100%;
+    margin-top: auto;
+    @extend %padding-top-narrow;
+    @extend %padding-horizontal-standard;
+    @extend %padding-bottom-standard;
+  }
+}

@@ -1,0 +1,10 @@
+%inline-image {
+  @extend %central !optional;
+  display: block;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+  @supports (object-fit: cover) {
+    object-fit: cover
+  }
+}
